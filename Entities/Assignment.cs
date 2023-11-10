@@ -1,4 +1,6 @@
-﻿namespace CodingCamp
+﻿using System;
+
+namespace CodingCamp
 {
     public class Assignment
     {
@@ -12,6 +14,17 @@
 
         public Course Courses { get; set; }
 
+        //Methods
+
+        public void Print()
+        {
+            Console.WriteLine($"{Title,-25}{Description,-25}{OralMark,-15}{TotalMark,-15}");
+        }
+
+        public void PrintTitle()
+        {
+            Console.WriteLine($"{Title,-25}");
+        }
     }
 
 

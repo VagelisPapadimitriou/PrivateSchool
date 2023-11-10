@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace CodingCamp
 {
@@ -13,9 +14,22 @@ namespace CodingCamp
 
         //Navigation Properties
 
-        public List<Course> Courses { get; set; }
+        public List<Course> Courses { get; set; } = new List<Course>();
 
         public List<Assignment> Assignments { get; set; } = new List<Assignment>();
+
+
+        //Methods
+
+        public void Print()
+        {
+            Console.WriteLine($"{FirstName,-15}{LastName,-15}{DateOfBirth.ToString("dd-MMM-yyyy"),-15}{TuitionFees,-15}");
+        }
+
+        public void PrintName()
+        {
+            Console.WriteLine($"{FirstName,-15}{LastName,-15}");
+        }
     }
 
 

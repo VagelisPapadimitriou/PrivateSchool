@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace CodingCamp
 {
@@ -19,9 +20,19 @@ namespace CodingCamp
 
         public List<Assignment> Assignments { get; set; } = new List<Assignment>();
 
+        //Methods
+
+        public void Print()
+        {
+            Console.WriteLine($"{Title,-15}{StartDate.ToString("dd-MMM-yyyy"),-15}{EndDate.ToString("dd-MMM-yyyy"),-15}{Type,-15}");
+        }
+
+        public void PrintTitle()
+        {
+            Console.WriteLine($"{Title,-15}");
+        }
 
 
-        
 
     }
 }

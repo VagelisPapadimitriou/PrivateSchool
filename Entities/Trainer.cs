@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace CodingCamp
 {
@@ -12,6 +14,12 @@ namespace CodingCamp
 
         public Course Courses { get; set; }
 
+        //Methods
+
+        public void PrintName()
+        {
+            Console.WriteLine($"{FirstName,-15}{LastName,-15}");
+        }
     }
 
 

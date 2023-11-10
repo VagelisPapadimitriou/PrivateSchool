@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Application.cs" />
     <Compile Include="Entities\Assignment.cs" />
     <Compile Include="Entities\Course.cs" />
     <Compile Include="Database\MyDatabase.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\Trainer.cs" />
     <Compile Include="Enums\Type.cs" />
+    <Compile Include="View\View.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
