@@ -43,7 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aesthetic\HideTheMainMenu.cs" />
     <Compile Include="Application\Application.cs" />
+    <Compile Include="Application\Imports.cs" />
+    <Compile Include="Application\Results.cs" />
+    <Compile Include="ControllerResults\ControllerCreateMenu.cs" />
+    <Compile Include="ControllerResults\ControllerMainMenu.cs" />
+    <Compile Include="ControllerResults\ControllerResultMenu.cs" />
+    <Compile Include="Aesthetic\HideTheResultMenu.cs" />
+    <Compile Include="InputCourse.cs" />
+    <Compile Include="View\Menus\CreateMenu.cs" />
+    <Compile Include="View\Menus\MainMenu.cs" />
     <Compile Include="Entities\Assignment.cs" />
     <Compile Include="Entities\Course.cs" />
     <Compile Include="Database\MyDatabase.cs" />
@@ -52,10 +62,13 @@
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\Trainer.cs" />
     <Compile Include="Enums\Type.cs" />
+    <Compile Include="View\Menus\ResultMenu.cs" />
+    <Compile Include="Validation\Validation.cs" />
     <Compile Include="View\View.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

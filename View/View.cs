@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.RegularExpressions;
-using System.Threading;
 
 namespace CodingCamp
 {
     public class View
     {
-        const string AllValidChoices = @"^[Ee1-9]$";
+        
 
         public static void Courses(List<Course> courses, string message)
         {
@@ -174,81 +172,8 @@ namespace CodingCamp
             }
             Console.WriteLine("-----------------------------------------------");
         }
-        public static void Error(string userChoice)
-        {
-            if (!Regex.IsMatch(userChoice, AllValidChoices))
-            {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine();
-            Console.WriteLine($"{"--> Wrong Choice - Choose Again <--",51}");
-            Console.WriteLine($"{"|",34}");
-            Console.WriteLine($"{"V",34}");
-            Console.ResetColor();
-            }
-        }
-        public static void InputCheck(string input)
-        {
-            if (Regex.IsMatch(input, AllValidChoices))
-            {
-                Console.Beep(1500, 80);
-            }
-            else
-            {
-                Console.Beep();
-            }
-            Thread.Sleep(100);
-        }
-        public static void Menu()
-        {
-            const int Spacing = -37;
-            const int exitSpacing = 72;
-            const int optionSpacing = 46;
-
-            //Choose an Option Message
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine($"{"--> CHOOSE AN OPTION <--",optionSpacing}");
-            Console.WriteLine();
-            Console.ResetColor();
-
-            //Choices
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.Write($"{"----------- COURSES -----------",Spacing}");
-            Console.WriteLine($"{"------------- STUDENTS ------------"}");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine($"{"1 - All Courses",Spacing}{"4 - All Students"}");
-            Console.WriteLine($"{"",Spacing}{"5 - All Students per Course"}");
-            Console.WriteLine($"{"",Spacing}{"6 - All Assignments per Student"}");
-            Console.Write($"{"",Spacing}{"7 - Students that belong to\n\t\t\t\t\t more than one course"}");
-            Console.WriteLine("\n\n");
-
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.Write($"{"----------- TRAINERS ----------",Spacing}");
-            Console.WriteLine($"{"----------- ASSIGNMENTS -----------"}");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine($"{"2 - All Trainers",Spacing}{"8 - All Assignments"}");
-            Console.WriteLine($"{"3 - All Trainers per Course",Spacing}{"9 - All Assignments per Course"}");
-            Console.WriteLine("\n");
-
-            //Exit
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine($"{"----------------------",exitSpacing}");
-            Console.WriteLine($"{"|                    |",exitSpacing}");
-            Console.WriteLine($"{"|------- EXIT -------|",exitSpacing}");
-            Console.WriteLine($"{"|                    |",exitSpacing}");
-            Console.WriteLine($"{"----------------------",exitSpacing}");
-            Console.ForegroundColor = ConsoleColor.DarkMagenta;
-            Console.WriteLine($"{"Press E or e to Exit ",exitSpacing}");
-            Console.ResetColor();
-
-        }
-
+        
+        
     }
-
-
-
-
-
-
 
 }
