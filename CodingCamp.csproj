@@ -45,11 +45,7 @@
   <ItemGroup>
     <Compile Include="Aesthetic\HideTheMainMenu.cs" />
     <Compile Include="Application\Application.cs" />
-    <Compile Include="Application\Imports.cs" />
-    <Compile Include="Application\Results.cs" />
-    <Compile Include="ControllerResults\ControllerCreateMenu.cs" />
-    <Compile Include="ControllerResults\ControllerMainMenu.cs" />
-    <Compile Include="ControllerResults\ControllerResultMenu.cs" />
+    <Compile Include="Controller\Controller.cs" />
     <Compile Include="Aesthetic\HideTheResultMenu.cs" />
     <Compile Include="InputCourse.cs" />
     <Compile Include="View\Menus\CreateMenu.cs" />
