@@ -15,11 +15,11 @@ namespace CodingCamp
             }
         }
 
-        public static void CreateMenu(string userChoice)
+        public static void CreateMenu(MyDatabase db, string userChoice)
         {
             switch (userChoice)
             {
-                case "1": Console.WriteLine("1 - Create new Course"); ; break;
+                case "1": InputCourse.CourseInput(db) ; break;
                 case "2": Console.WriteLine("2 - Create new Trainer"); ; break;
                 case "3": Console.WriteLine("3 - Match Trainers per Course"); ; break;
                 case "4": Console.WriteLine("4 - Create new Student"); ; break;

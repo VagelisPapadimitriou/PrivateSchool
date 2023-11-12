@@ -50,7 +50,7 @@ namespace CodingCamp
                 Validation.InputCheckCreateMenu(userChoice);
                 Console.Clear();
 
-                Controller.CreateMenu(userChoice);
+                Controller.CreateMenu(db, userChoice);
 
             } while (userChoice != "B" && userChoice != "b");
         }

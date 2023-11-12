@@ -5,5 +5,4 @@
         FullTime,
         PartTime
     }
-
 }

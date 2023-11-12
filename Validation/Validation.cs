@@ -31,7 +31,6 @@ namespace CodingCamp
             Thread.Sleep(100);
         }
 
-
         public static void ErrorCreateChoice(string userChoice)
         {
             if (!Regex.IsMatch(userChoice, @"^[Bb1-8]$"))
@@ -81,6 +80,6 @@ namespace CodingCamp
             Thread.Sleep(100);
         }
 
-        
+
     }
 }
