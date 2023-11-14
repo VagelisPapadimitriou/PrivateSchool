@@ -24,15 +24,14 @@ namespace CodingCamp.Views.Menus
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"{"1 - Create new Course",spacing}{"4 - Create new Student"}");
             Console.WriteLine($"{"",spacing}{"5 - Match Students per Course"}");
-            Console.WriteLine($"{"",spacing}{"6 - Match Assignments per Student"}");
             Console.WriteLine("\n\n");
 
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.Write($"{"----------- TRAINERS ----------",spacing}");
             Console.WriteLine($"{"----------- ASSIGNMENTS -----------"}");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine($"{"2 - Create new Trainer",spacing}{"7 - Create new Assignment"}");
-            Console.WriteLine($"{"3 - Match Trainers per Course",spacing}{"8 - Match Assignments per Course"}");
+            Console.WriteLine($"{"2 - Create new Trainer",spacing}{"6 - Create new Assignment"}");
+            Console.WriteLine($"{"3 - Match Trainers per Course",spacing}{"7 - Match Assignments per Course"}");
             Console.WriteLine("\n");
 
             //Back

@@ -49,8 +49,10 @@
     <Compile Include="Aesthetic\HideTheResultMenu.cs" />
     <Compile Include="Controllers\UserInputs\AssignmentInputHelper.cs" />
     <Compile Include="Controllers\UserInputs\StudentInputHelper.cs" />
+    <Compile Include="Controllers\UserInputs\AssignmentsPerCourseHelper.cs" />
     <Compile Include="Controllers\UserInputs\TrainerInputHelper.cs" />
     <Compile Include="Controllers\UserInputs\CourseInputHelper.cs" />
+    <Compile Include="Controllers\UserInputs\StudentsPerCourseHelper.cs" />
     <Compile Include="Controllers\UserInputs\TrainerPerCourseHelper.cs" />
     <Compile Include="Views\Menus\CreateMenu.cs" />
     <Compile Include="Views\Menus\MainMenu.cs" />
@@ -64,7 +66,7 @@
     <Compile Include="Enums\Type.cs" />
     <Compile Include="Views\Menus\ResultMenu.cs" />
     <Compile Include="Validations\Validation.cs" />
-    <Compile Include="Views\View.cs" />
+    <Compile Include="Views\Results.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

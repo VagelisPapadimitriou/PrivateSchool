@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace CodingCamp.Entities
 {
@@ -16,6 +17,11 @@ namespace CodingCamp.Entities
 
         //Methods
 
+        public void PrintPairingData()
+        {
+            Console.WriteLine($"{AssignmentId,-7}{Title,-25}{Description}");
+        }
+
         public void Print()
         {
             Console.WriteLine($"{Title,-25}{Description,-25}{OralMark,-15}{TotalMark,-15}");
@@ -25,6 +31,7 @@ namespace CodingCamp.Entities
         {
             Console.WriteLine($"{Title,-25}");
         }
+
     }
 
 

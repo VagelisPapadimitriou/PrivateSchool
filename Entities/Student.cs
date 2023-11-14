@@ -27,6 +27,11 @@ namespace CodingCamp.Entities
         {
             Console.WriteLine($"{FirstName,-15}{LastName,-15}");
         }
+
+        public void PrintPairingData()
+        {
+            Console.WriteLine($"{StudentId,-7}{FirstName,-15}{LastName,-15}");
+        }
     }
 
 

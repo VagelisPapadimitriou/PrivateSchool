@@ -27,6 +27,11 @@ namespace CodingCamp.Entities
             Console.WriteLine($"{CourseId,-7}{Title,-15}{StartDate.ToString("dd-MMM-yyyy"),-15}{EndDate.ToString("dd-MMM-yyyy"),-15}{Type,-15}");
         }
 
+        public void PrintLessPairingData()
+        {
+            Console.WriteLine($"{CourseId,-7}{Title}");
+        }
+
         public void Print()
         {
             Console.WriteLine($"{Title,-15}{StartDate.ToString("dd-MMM-yyyy"),-15}{EndDate.ToString("dd-MMM-yyyy"),-15}{Type,-15}");

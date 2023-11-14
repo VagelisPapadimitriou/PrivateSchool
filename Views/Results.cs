@@ -4,10 +4,8 @@ using System.Collections.Generic;
 
 namespace CodingCamp.Views
 {
-    public class View
+    public class Results
     {
-
-
         public static void Courses(List<Course> courses, string message)
         {
             int indexCounter = 1;

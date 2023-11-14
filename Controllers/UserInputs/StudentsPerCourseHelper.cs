@@ -9,44 +9,54 @@ using System.Threading.Tasks;
 
 namespace CodingCamp.Controllers.UserInputs
 {
-    internal class TrainerPerCourseHelper
+    internal class StudentsPerCourseHelper
     {
-        public static void MatchTrainerPerCourse(MyDatabase db)
+        public static void MatchStudentsPerCourse(MyDatabase db)
         {
-            int userChoiceTrainerId = UserInputTrainerId(db);
-            int userChoiceCourseId = UserInputCourseId(db, userChoiceTrainerId);
+            int userChoiceStudentId = UserInputStudentId(db);
+            int userChoiceCourseId = UserInputCourseId(db, userChoiceStudentId);
 
-            Trainer selectedTrainer = db.Trainers.Find(x => x.TrainerId == userChoiceTrainerId);
+            Student selectedStudent = db.Students.Find(x => x.StudentId == userChoiceStudentId);
             Course selectedCourse = db.Courses.Find(x => x.CourseId == userChoiceCourseId);
 
-            selectedCourse.Trainers.Add(selectedTrainer);
-            db.Courses.Find(x => x.Trainers.Remove(selectedTrainer));
+            if (!selectedCourse.Students.Contains(selectedStudent))
+            {
+                selectedCourse.Students.Add(selectedStudent);
+                selectedStudent.Courses.Add(selectedCourse);
+            }
 
-            PrintMatchMessage(selectedTrainer, selectedCourse);
+            PrintMatchMessage(selectedStudent, selectedCourse);
 
             Aesthetic.HideTheMainMenu.ExecuteHideTheMenu();
         }
 
-        public static void PrintTrainerData(MyDatabase db, string message)
+        public static void PrintStudentData(MyDatabase db, string message)
         {
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine($"{message,25}\n");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine($"{"Id",-7}{"FirstName",-15}{"LastName",-15}");
+            Console.WriteLine($"{"Id",-7}{"FirstName",-15}{"LastName",-18}{"Courses"}");
             Console.ResetColor();
-            foreach (var trainer in db.Trainers)
+            foreach (var student in db.Students)
             {
-                trainer.PrintPairingData();
+                Console.WriteLine("---------------------------------------------------");
+                student.PrintPairingData();
+                foreach (var course in student.Courses)
+                {
+                    Console.Write($"{"",40}");
+                    course.PrintTitle();
+                }
             }
+            Console.WriteLine("---------------------------------------------------");
         }
-        public static int UserInputTrainerId(MyDatabase db)
+        public static int UserInputStudentId(MyDatabase db)
         {
             string userChoice;
             int idToFind;
             bool idExists;
             do
             {
-                PrintTrainerData(db, "Data of all Trainers");
+                PrintStudentData(db, "Data of all Students");
 
                 //User Input
                 Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -59,7 +69,7 @@ namespace CodingCamp.Controllers.UserInputs
 
                 if (Int32.TryParse(userChoice, out idToFind))
                 {
-                    idExists = db.Trainers.Any(tr => tr.TrainerId == idToFind);
+                    idExists = db.Students.Any(st => st.StudentId == idToFind);
                 }
                 else
                 {
@@ -67,15 +77,15 @@ namespace CodingCamp.Controllers.UserInputs
                 }
             } while (!idExists);
 
-            PrintTrainerIdChoice(db, idToFind);
+            PrintStudentIdChoice(db, idToFind);
 
             return idToFind;
         }
-        private static void PrintTrainerIdChoice(MyDatabase db, int userChoiceTrainerId)
+        private static void PrintStudentIdChoice(MyDatabase db, int userChoiceStudentId)
         {
-            PrintTrainerData(db, "Data of all Trainers");
+            PrintStudentData(db, "Data of all Students");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
-            Console.WriteLine("\nYour choice was ID: " + userChoiceTrainerId + "\n");
+            Console.WriteLine("\nYour choice was ID: " + userChoiceStudentId + "\n");
             Console.ResetColor();
         }
         public static void PrintCourseData(MyDatabase db, string message)
@@ -90,7 +100,7 @@ namespace CodingCamp.Controllers.UserInputs
                 course.PrintPairingData();
             }
         }
-        public static int UserInputCourseId(MyDatabase db, int userChoiceTrainerId)
+        public static int UserInputCourseId(MyDatabase db, int userChoiceStudentId)
         {
             string userChoice;
             int idToFind;
@@ -98,7 +108,7 @@ namespace CodingCamp.Controllers.UserInputs
             do
             {
                 Console.Clear();
-                PrintTrainerIdChoice(db, userChoiceTrainerId);
+                PrintStudentIdChoice(db, userChoiceStudentId);
                 PrintCourseData(db, "Data of all Courses");
 
                 //User Input
@@ -121,7 +131,7 @@ namespace CodingCamp.Controllers.UserInputs
             } while (!idExists);
 
 
-            PrintTrainerIdChoice(db, userChoiceTrainerId);
+            PrintStudentIdChoice(db, userChoiceStudentId);
 
             PrintCourseData(db, "Data of all Courses");
             Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -130,15 +140,15 @@ namespace CodingCamp.Controllers.UserInputs
 
             return idToFind;
         }
-        private static void PrintMatchMessage(Trainer selectedTrainer, Course selectedCourse)
+        private static void PrintMatchMessage(Student selectedStudent, Course selectedCourse)
         {
             Console.WriteLine("------------------------------------------------------------");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write("Trainer ");
+            Console.Write("Student ");
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write($"{selectedTrainer.FirstName} {selectedTrainer.LastName}");
+            Console.Write($"{selectedStudent.FirstName} {selectedStudent.LastName}");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.Write(" moved to course ");
+            Console.Write(" assigned to course ");
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine($"{selectedCourse.Title}.");
             Console.ResetColor();

@@ -24,7 +24,7 @@ namespace CodingCamp.Views.Menus
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.WriteLine($"{"-------------------------------",spacing}{"-------------------------------"}");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine($"{"      1 - Import New Data",spacing}{"         2 - View Data"}");
+            Console.WriteLine($"{"         1 - Edit Data",spacing}{"         2 - View Data"}");
             Console.WriteLine("\n");
 
             //Exit
