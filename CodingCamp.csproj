@@ -44,12 +44,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aesthetic\HideTheMainMenu.cs" />
-    <Compile Include="Application\Application.cs" />
-    <Compile Include="Controller\Controller.cs" />
+    <Compile Include="Application.cs" />
+    <Compile Include="Controllers\Controller.cs" />
     <Compile Include="Aesthetic\HideTheResultMenu.cs" />
-    <Compile Include="InputCourse.cs" />
-    <Compile Include="View\Menus\CreateMenu.cs" />
-    <Compile Include="View\Menus\MainMenu.cs" />
+    <Compile Include="Controllers\UserInputs\AssignmentInputHelper.cs" />
+    <Compile Include="Controllers\UserInputs\StudentInputHelper.cs" />
+    <Compile Include="Controllers\UserInputs\TrainerInputHelper.cs" />
+    <Compile Include="Controllers\UserInputs\CourseInputHelper.cs" />
+    <Compile Include="Controllers\UserInputs\TrainerPerCourseHelper.cs" />
+    <Compile Include="Views\Menus\CreateMenu.cs" />
+    <Compile Include="Views\Menus\MainMenu.cs" />
     <Compile Include="Entities\Assignment.cs" />
     <Compile Include="Entities\Course.cs" />
     <Compile Include="Database\MyDatabase.cs" />
@@ -58,9 +62,9 @@
     <Compile Include="Entities\Student.cs" />
     <Compile Include="Entities\Trainer.cs" />
     <Compile Include="Enums\Type.cs" />
-    <Compile Include="View\Menus\ResultMenu.cs" />
-    <Compile Include="Validation\Validation.cs" />
-    <Compile Include="View\View.cs" />
+    <Compile Include="Views\Menus\ResultMenu.cs" />
+    <Compile Include="Validations\Validation.cs" />
+    <Compile Include="Views\View.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

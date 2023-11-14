@@ -1,11 +1,12 @@
-﻿using System;
+﻿using CodingCamp.Entities;
+using System;
 using System.Collections.Generic;
 
-namespace CodingCamp
+namespace CodingCamp.Views
 {
     public class View
     {
-        
+
 
         public static void Courses(List<Course> courses, string message)
         {
@@ -143,11 +144,17 @@ namespace CodingCamp
                 Console.WriteLine("---------------------------------------------------------");
                 Console.Write($"{indexCounter++,-7}");
                 student.PrintName();
-                foreach (var assignment in student.Assignments)
+
+                foreach (var course in student.Courses)
                 {
-                    Console.Write($"{"",-38}");
-                    assignment.PrintTitle();
+                    foreach (var assignment in course.Assignments)
+                    {
+                        Console.Write($"{"",-38}");
+                        assignment.PrintTitle();
+                    }
+
                 }
+
             }
             Console.WriteLine("---------------------------------------------------------");
         }
@@ -172,8 +179,8 @@ namespace CodingCamp
             }
             Console.WriteLine("-----------------------------------------------");
         }
-        
-        
+
+
     }
 
 }

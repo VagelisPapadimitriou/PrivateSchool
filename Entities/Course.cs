@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace CodingCamp
+namespace CodingCamp.Entities
 {
     public class Course
     {
@@ -10,7 +10,7 @@ namespace CodingCamp
         public string Title { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public Type Type { get; set; }
+        public CodingCamp.Enums.Type Type { get; set; }
 
         //Navigation Properties
 
@@ -21,6 +21,11 @@ namespace CodingCamp
         public List<Assignment> Assignments { get; set; } = new List<Assignment>();
 
         //Methods
+
+        public void PrintPairingData()
+        {
+            Console.WriteLine($"{CourseId,-7}{Title,-15}{StartDate.ToString("dd-MMM-yyyy"),-15}{EndDate.ToString("dd-MMM-yyyy"),-15}{Type,-15}");
+        }
 
         public void Print()
         {

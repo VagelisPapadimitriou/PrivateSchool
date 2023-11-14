@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace CodingCamp
+namespace CodingCamp.Entities
 {
     public class Student
     {
@@ -16,14 +16,11 @@ namespace CodingCamp
 
         public List<Course> Courses { get; set; } = new List<Course>();
 
-        public List<Assignment> Assignments { get; set; } = new List<Assignment>();
-
-
         //Methods
 
         public void Print()
         {
-            Console.WriteLine($"{FirstName,-15}{LastName,-15}{DateOfBirth.ToString("dd-MMM-yyyy"),-15}{TuitionFees,-15}");
+            Console.WriteLine($"{FirstName,-15}{LastName,-15}{DateOfBirth.ToString("dd-MMM-yyyy"),-15}{TuitionFees,-15:C}");
         }
 
         public void PrintName()

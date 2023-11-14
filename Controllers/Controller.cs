@@ -1,6 +1,10 @@
-﻿using System;
+﻿using CodingCamp.Controllers.UserInputs;
+using CodingCamp.Database;
+using CodingCamp.Validations;
+using CodingCamp.Views;
+using System;
 
-namespace CodingCamp
+namespace CodingCamp.Controllers
 {
     public class Controller
     {
@@ -19,15 +23,15 @@ namespace CodingCamp
         {
             switch (userChoice)
             {
-                case "1": InputCourse.CourseInput(db) ; break;
-                case "2": Console.WriteLine("2 - Create new Trainer"); ; break;
-                case "3": Console.WriteLine("3 - Match Trainers per Course"); ; break;
-                case "4": Console.WriteLine("4 - Create new Student"); ; break;
-                case "5": Console.WriteLine("5 - Match Students per Course"); ; break;
-                case "6": Console.WriteLine("6 - Match Assignments per Student"); ; break;
-                case "7": Console.WriteLine("7 - Create new Assignment"); ; break;
-                case "8": Console.WriteLine("8 - Match Assignments per Course"); ; break;
-                
+                case "1": CourseInputHelper.CourseInput(db); break;
+                case "2": TrainerInputHelper.TrainerInput(db); break;
+                case "3": TrainerPerCourseHelper.MatchTrainerPerCourse(db); break;
+                case "4": StudentInputHelper.StudentInput(db); break;
+                case "5": Console.WriteLine("5 - Match Students per Course"); break;
+                case "6": Console.WriteLine("6 - Match Assignments per Student"); break;
+                case "7": AssignmentInputHelper.AssignmentInput(db); break;
+                case "8": Console.WriteLine("8 - Match Assignments per Course"); break;
+
                 default: Validation.ErrorCreateChoice(userChoice); break;
             }
         }

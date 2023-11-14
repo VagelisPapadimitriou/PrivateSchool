@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CodingCamp
+namespace CodingCamp.Views.Menus
 {
     public class ResultMenu
     {

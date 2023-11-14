@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace CodingCamp
+namespace CodingCamp.Aesthetic
 {
     public class HideTheResultMenu
     {

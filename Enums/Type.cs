@@ -1,4 +1,4 @@
-﻿namespace CodingCamp
+﻿namespace CodingCamp.Enums
 {
     public enum Type
     {

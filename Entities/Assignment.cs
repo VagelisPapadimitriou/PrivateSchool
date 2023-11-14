@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CodingCamp
+namespace CodingCamp.Entities
 {
     public class Assignment
     {

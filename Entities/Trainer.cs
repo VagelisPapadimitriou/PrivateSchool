@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices.ComTypes;
 
-namespace CodingCamp
+namespace CodingCamp.Entities
 {
     public class Trainer
     {
@@ -15,6 +15,11 @@ namespace CodingCamp
         public Course Courses { get; set; }
 
         //Methods
+
+        public void PrintPairingData()
+        {
+            Console.WriteLine($"{TrainerId,-7}{FirstName,-15}{LastName,-15}");
+        }
 
         public void PrintName()
         {

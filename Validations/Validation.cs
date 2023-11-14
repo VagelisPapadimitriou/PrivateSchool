@@ -1,8 +1,10 @@
-﻿using System;
+﻿using CodingCamp.Database;
+using CodingCamp.Entities;
+using System;
 using System.Text.RegularExpressions;
 using System.Threading;
 
-namespace CodingCamp
+namespace CodingCamp.Validations
 {
     public class Validation
     {
@@ -30,7 +32,6 @@ namespace CodingCamp
             }
             Thread.Sleep(100);
         }
-
         public static void ErrorCreateChoice(string userChoice)
         {
             if (!Regex.IsMatch(userChoice, @"^[Bb1-8]$"))
@@ -55,7 +56,6 @@ namespace CodingCamp
             }
             Thread.Sleep(100);
         }
-
         public static void ErrorMainMenuChoice(string userChoice)
         {
             if (!Regex.IsMatch(userChoice, @"^[Ee1-2]$"))
@@ -66,7 +66,6 @@ namespace CodingCamp
                 Console.ResetColor();
             }
         }
-
         public static void InputCheckMainMenu(string input)
         {
             if (Regex.IsMatch(input, @"^[Ee1-2]$"))
@@ -79,6 +78,24 @@ namespace CodingCamp
             }
             Thread.Sleep(100);
         }
+        public static bool InputCheckName(string input)
+        {
+            return !Regex.IsMatch(input, @"^[A-Z][a-zA-z]{2,}$");
+        }
+        public static bool InputCheckTuitionFees(string input)
+        {
+            return Regex.IsMatch(input, @"^[0-9]+$");
+        }
+        public static bool InputCheckMarks(string input)
+        {
+            return Regex.IsMatch(input, @"^(?:100|\d{1,2})$");
+        }
+
+        //public static void IsValidId(MyDatabase db, string userChoice)
+        //{
+
+        //    db.Any(db => db.) == userChoice)
+        //}
 
 
     }

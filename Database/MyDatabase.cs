@@ -1,7 +1,8 @@
-﻿using System;
+﻿using CodingCamp.Entities;
+using System;
 using System.Collections.Generic;
 
-namespace CodingCamp
+namespace CodingCamp.Database
 {
     public class MyDatabase
     {
@@ -24,7 +25,7 @@ namespace CodingCamp
             {
                 CourseId = 1,
                 Title = "C#",
-                Type = Type.PartTime,
+                Type = CodingCamp.Enums.Type.PartTime,
                 StartDate = new DateTime(2023, 9, 1),       //starts at 01-Sep-2023
                 EndDate = new DateTime(2024, 3, 31)         //ends   at 31-Mar-2024
             };
@@ -33,7 +34,7 @@ namespace CodingCamp
             {
                 CourseId = 2,
                 Title = "Python",
-                Type = Type.FullTime,
+                Type = CodingCamp.Enums.Type.FullTime,
                 StartDate = new DateTime(2023, 9, 1),       //starts at 01-Sep-2023
                 EndDate = new DateTime(2023, 12, 31)        //ends   at 31-Dec-2023
             };
@@ -41,7 +42,7 @@ namespace CodingCamp
             {
                 CourseId = 3,
                 Title = "JavaScript",
-                Type = Type.PartTime,
+                Type = CodingCamp.Enums.Type.PartTime,
                 StartDate = new DateTime(2023, 9, 1),       //starts at 01-Sep-2023
                 EndDate = new DateTime(2024, 3, 31)         //ends   at 31-Mar-2024
             };
@@ -123,7 +124,7 @@ namespace CodingCamp
                 DateOfBirth = new DateTime(1997, 9, 10),
                 TuitionFees = 2300
             };
-            s2.Courses = new List<Course>() { c2 };
+            s3.Courses = new List<Course>() { c2 };
             c2.Students.Add(s3);
 
             Student s4 = new Student()
@@ -341,62 +342,6 @@ namespace CodingCamp
             };
             a12.Courses = c3;
             c3.Assignments.Add(a12);
-            #endregion
-
-            #region Add Assignments to Students
-            s1.Assignments.Add(a1);
-            s1.Assignments.Add(a2);
-            s1.Assignments.Add(a3);
-            s1.Assignments.Add(a4);
-
-            s2.Assignments.Add(a1);
-            s2.Assignments.Add(a2);
-            s2.Assignments.Add(a3);
-            s2.Assignments.Add(a4);
-
-            s3.Assignments.Add(a5);
-            s3.Assignments.Add(a6);
-            s3.Assignments.Add(a7);
-            s3.Assignments.Add(a8);
-
-            s4.Assignments.Add(a5);
-            s4.Assignments.Add(a6);
-            s4.Assignments.Add(a7);
-            s4.Assignments.Add(a8);
-
-            s5.Assignments.Add(a9);
-            s5.Assignments.Add(a10);
-            s5.Assignments.Add(a11);
-            s5.Assignments.Add(a12);
-
-            s6.Assignments.Add(a1);
-            s6.Assignments.Add(a2);
-            s6.Assignments.Add(a3);
-            s6.Assignments.Add(a9);
-            s6.Assignments.Add(a11);
-
-            s7.Assignments.Add(a9);
-            s7.Assignments.Add(a10);
-            s7.Assignments.Add(a11);
-            s7.Assignments.Add(a12);
-
-            s8.Assignments.Add(a5);
-            s8.Assignments.Add(a6);
-            s8.Assignments.Add(a7);
-            s8.Assignments.Add(a8);
-
-            s9.Assignments.Add(a1);
-            s9.Assignments.Add(a2);
-            s9.Assignments.Add(a4);
-            s9.Assignments.Add(a10);
-            s9.Assignments.Add(a12);
-
-            s10.Assignments.Add(a1);
-            s10.Assignments.Add(a2);
-            s10.Assignments.Add(a3);
-            s10.Assignments.Add(a10);
-            s10.Assignments.Add(a11);
-            s10.Assignments.Add(a12);
             #endregion
 
             #region Populate Lists of MyDatabase

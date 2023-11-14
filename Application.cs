@@ -1,4 +1,9 @@
-﻿using System;
+﻿using CodingCamp.Aesthetic;
+using CodingCamp.Controllers;
+using CodingCamp.Database;
+using CodingCamp.Validations;
+using CodingCamp.Views.Menus;
+using System;
 using System.Text.RegularExpressions;
 
 namespace CodingCamp
