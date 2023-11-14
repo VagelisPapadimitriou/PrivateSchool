@@ -19,8 +19,14 @@ namespace CodingCamp.Controllers.UserInputs
             Trainer selectedTrainer = db.Trainers.Find(x => x.TrainerId == userChoiceTrainerId);
             Course selectedCourse = db.Courses.Find(x => x.CourseId == userChoiceCourseId);
 
+
+            if (selectedTrainer.Courses != null)
+            {
+            Course oldCourse = selectedTrainer.Courses;
+            oldCourse.Trainers.Remove(selectedTrainer);
+            }
             selectedCourse.Trainers.Add(selectedTrainer);
-            db.Courses.Find(x => x.Trainers.Remove(selectedTrainer));
+            selectedTrainer.Courses = selectedCourse;
 
             PrintMatchMessage(selectedTrainer, selectedCourse);
 
